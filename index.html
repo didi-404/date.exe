@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Date.exe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="aurora aurora-one"></div>
+  <div class="aurora aurora-two"></div>
+  <div class="hearts-bg" aria-hidden="true"></div>
+
+  <main class="app">
+    <section class="hero" id="hero">
+      <div class="terminal-card" aria-label="Terminal simulando pedido de date">
+        <div class="terminal-top">
+          <span></span>
+          <span></span>
+          <span></span>
+          <p>date_request.js</p>
+        </div>
+
+        <div class="terminal-body">
+          <p><span class="prompt">user@love:</span> npm run coragem</p>
+          <p><span class="prompt success">status:</span> carregando sentimentos...</p>
+          <p><span class="prompt warn">warning:</span> risco alto de se apaixonar</p>
+          <p class="typing-line" id="typingText"></p>
+        </div>
+      </div>
+
+      <div class="invite-card">
+        <div class="badge">POV: você deu chance pro cara da tecnologia</div>
+        <h1>Você aceitaria ir a um <span>date</span> comigo?</h1>
+        <p class="subtitle">Prometo tentar não falar de código por mais de 15 minutos. Talvez.</p>
+
+        <div class="stats">
+          <div>
+            <strong>99%</strong>
+            <small>compatibilidade</small>
+          </div>
+          <div>
+            <strong>0</strong>
+            <small>bugs no carinho</small>
+          </div>
+          <div>
+            <strong>∞</strong>
+            <small>assuntos aleatórios</small>
+          </div>
+        </div>
+
+        <div class="actions" id="actions">
+          <button class="btn btn-yes" id="yesBtn">Sim 💘</button>
+          <button class="btn btn-think" id="thinkBtn">Pensa bem 🤨</button>
+          <button class="btn btn-no" id="noBtn">Não</button>
+        </div>
+
+        <p class="microcopy" id="microcopy">Escolha com sabedoria. O botão “não” é meio instável.</p>
+      </div>
+    </section>
+
+    <section class="result hidden" id="result">
+      <div class="result-card">
+        <div class="emoji-burst">💖</div>
+        <h2>Pedido aceito com sucesso!</h2>
+
+        <div class="date-options" aria-label="Opções de date">
+          <button type="button" data-option="Café + conversa boa">☕ Café</button>
+          <button type="button" data-option="Cinema + pipoca">🎬 Cinema</button>
+          <button type="button" data-option="Sorvete + caminhada">🍦 Sorvete</button>
+          <button type="button" data-option="Rolê aleatório">✨ Surpresa</button>
+        </div>
+
+        <form
+          class="date-form"
+          id="dateForm"
+          action="https://formsubmit.co/ajax/diego.souza.3046@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Date confirmado 💘" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="Resposta" value="Sim, aceitou o date" />
+          <input type="hidden" name="Opção escolhida" id="emailOption" value="Ainda não escolhida" />
+
+          <div class="schedule-box">
+            <div class="field-group">
+              <label for="dateInput">Escolha a data</label>
+              <input type="date" id="dateInput" name="Data escolhida" required />
+            </div>
+
+            <div class="field-group">
+              <label for="timeInput">Escolha o horário</label>
+              <input type="time" id="timeInput" name="Horário escolhido" required />
+            </div>
+          </div>
+
+          <div class="field-group full-field">
+            <label for="messageInput">Mensagem opcional</label>
+            <textarea id="messageInput" name="Mensagem" rows="3" placeholder="Pode deixar um recadinho aqui..."></textarea>
+          </div>
+
+          <div class="ticket" id="ticket">
+            <div>
+              <small>DATE TICKET</small>
+              <h3 id="chosenOption">Escolha uma opção acima</h3>
+            </div>
+            <p>Convidado(a): pessoa mais bonita dessa tela</p>
+            <p id="ticketDate">Data: aguardando escolha</p>
+            <p id="ticketTime">Horário: aguardando escolha</p>
+            <p>Status: aprovado ✅</p>
+            <p>Prioridade: máxima</p>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn btn-send" id="sendBtn" type="submit">Confirmar e enviar para o Diego 💌</button>
+            <button class="btn btn-reset" id="resetBtn" type="button">Recomeçar</button>
+          </div>
+        </form>
+
+        <div class="success-message hidden" id="successMessage" role="status">
+          <div class="success-icon">💌</div>
+          <h3>Seu convite foi enviado, gatinha!</h3>
+          <p>Agora o Diego vai receber tudo no e-mail e não tem mais como fugir desse date.</p>
+        </div>
+      </div>
+    </section>
+
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
